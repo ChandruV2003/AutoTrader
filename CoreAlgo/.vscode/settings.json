@@ -1,0 +1,4 @@
+{
+    "python.pythonPath": "/Users/admin/.local/pipx/venvs/lean/bin/python",
+    "python.languageServer": "Pylance"
+}
