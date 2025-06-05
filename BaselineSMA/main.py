@@ -8,6 +8,9 @@ class BaselineSMA(QCAlgorithm):
         self.fast = self.SMA(self.spy, 50, Resolution.Daily)
         self.slow = self.SMA(self.spy, 200, Resolution.Daily)
         self.SetWarmUp(200)
+        self.SetBrokerageModel(BrokerageName.InteractiveBrokersBrokerage, AccountType.Margin)
+        self.atr = self.ATR(self.spy, 14, MovingAverageType.Simple)
+        self.stop_pct = 2.0
 
     def OnData(self, data):
         if self.IsWarmingUp:
