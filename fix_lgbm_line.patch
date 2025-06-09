@@ -1,0 +1,9 @@
+*** Begin Patch
+*** Update File: Research/scripts/train_lightgbm.py
+@@
+-    features = [re.sub(r'[^0-9A-Za-z_]', '_', f) for f in features]    os.makedirs(out_dir, exist_ok=True)
++    # — sanitize feature names for LightGBM
++    features = [re.sub(r'[^0-9A-Za-z_]', '_', f) for f in features]
++    # make sure output folder exists
++    os.makedirs(out_dir, exist_ok=True)
+*** End Patch

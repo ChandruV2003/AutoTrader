@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+PY="$ROOT/.venv/bin/python"
+LEAN="$(command -v lean)"
+
+# make Lean happy even under cron / Colima
+export DOCKER_HOST="unix://$HOME/.colima/default/docker.sock"
+export TMPDIR="$HOME/.lean/tmp"
+mkdir -p "$TMPDIR"
+
+cd "$ROOT"
+
+echo "⏰ $(date)  —  training model"
+"$PY" Research/scripts/train_lightgbm.py
+
+echo "⏰ $(date)  —  back-testing"
+"$LEAN" backtest BaselineSMA --output pipeline_last.json
+
+SUMMARY=$(find pipeline_last.json -maxdepth 1 -name '*-summary.json' | head -n 1)
+if [[ -f "$SUMMARY" ]]; then
+    NEW=$(jq -r '.Statistics["Sharpe Ratio"] // .statistics["Sharpe Ratio"] // ."Sharpe Ratio"' "$SUMMARY")
+    OLD=$(cat previous_sharpe.txt 2>/dev/null || echo -999)
+
+    echo "⏰ $(date)  —  Sharpe $NEW (prev $OLD)"
+
+    if (( $(echo "$NEW > $OLD" | bc -l) )); then
+        echo "$NEW" > previous_sharpe.txt
+        git add Research/models previous_sharpe.txt
+        git commit -m "Auto-promote model (Sharpe $NEW)"
+        git push origin main
+        echo "🚀 promoted improved model"
+    fi
+else
+    echo "⚠️  summary JSON not found — no promotion"
+fi

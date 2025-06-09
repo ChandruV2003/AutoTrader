@@ -1,0 +1,6 @@
+2011-03-18 00:00:00 Launching analysis for 1601452308 with LEAN Engine v2.5.0.0
+2011-03-18 00:00:00 Accurate daily end-times now enabled by default. See more at https://qnt.co/3YHaWHL. To disable it and use legacy daily bars set self.settings.daily_precise_end_time = False.
+2011-03-18 00:00:00 Algorithm starting warm up...
+2012-01-04 16:00:00 Algorithm finished warming up.
+2015-09-03 16:00:00 Warning: all market orders sent using daily data, or market orders sent after hours are automatically converted into MarketOnOpen orders.
+2025-06-04 16:00:00 Algorithm Id:(1601452308) completed in 17.89 seconds at 0k data points per second. Processing total of 3,616 data points.

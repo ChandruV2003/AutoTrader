@@ -1,0 +1,294 @@
++ set -euo pipefail
++++ dirname ./scripts/run_pipeline.sh
+++ cd ./scripts/..
+++ pwd
++ ROOT=/Users/admin/Developer/AutoTrader
++ PY=/Users/admin/Developer/AutoTrader/.venv/bin/python
+++ command -v lean
++ LEAN=/Users/admin/.local/bin/lean
++ export DOCKER_HOST=unix:///Users/admin/.colima/default/docker.sock
++ DOCKER_HOST=unix:///Users/admin/.colima/default/docker.sock
++ export TMPDIR=/Users/admin/.lean/tmp
++ TMPDIR=/Users/admin/.lean/tmp
++ mkdir -p /Users/admin/.lean/tmp
++ cd /Users/admin/Developer/AutoTrader
+++ date
++ echo '⏰ Sun Jun  8 09:52:14 EDT 2025  —  training model'
+⏰ Sun Jun  8 09:52:14 EDT 2025  —  training model
++ /Users/admin/Developer/AutoTrader/.venv/bin/python Research/scripts/train_lightgbm.py
+[*********************100%***********************]  1 of 1 completed
+✔ saved → /Users/admin/Developer/AutoTrader/Research/models/lgb_spy_2025-06-08.pkl
+++ date
++ echo '⏰ Sun Jun  8 09:52:19 EDT 2025  —  back-testing'
+⏰ Sun Jun  8 09:52:19 EDT 2025  —  back-testing
++ /Users/admin/.local/bin/lean backtest BaselineSMA --output pipeline_last.json
+Compiling '/LeanCLI/main.py'...
+20250608 13:52:24.217 TRACE:: Config.Get(): Configuration
+key not found. Key: version-id - Using default value:
+20250608 13:52:24.494 TRACE:: Config.Get(): Configuration
+key not found. Key: cache-location - Using default value:
+20250608 13:52:24.642 TRACE:: Config.Get(): Configuration
+key not found. Key: api-url - Using default value: 
+https://www.quantconnect.com/api/v2/
+20250608 13:52:24.669 TRACE:: Config.Get(): Configuration
+key not found. Key: plugin-directory - Using default 
+value:
+20250608 13:52:24.735 TRACE:: Composer(): Loading 
+Assemblies from /Lean/Launcher/bin/Debug
+20250608 13:52:25.306 TRACE:: Python for .NET Assembly: 
+Python.Runtime, Version=2.0.44.0, Culture=neutral, 
+PublicKeyToken=5000fea6cba702dd
+20250608 13:52:26.523 TRACE:: Engine.Main(): LEAN 
+ALGORITHMIC TRADING ENGINE v2.5.0.0 Mode: DEBUG (64bit) 
+Host: Chandrus-M1-MacBook-Pro
+20250608 13:52:26.803 TRACE:: Engine.Main(): Started 1:52
+PM
+20250608 13:52:26.934 TRACE:: Config.Get(): Configuration
+key not found. Key: lean-manager-type - Using default 
+value: LocalLeanManager
+20250608 13:52:27.308 TRACE:: JobQueue.NextJob(): 
+Selected /LeanCLI/main.py
+20250608 13:52:28.051 TRACE:: Config.GetValue(): 
+scheduled-event-leaky-bucket-capacity - Using default 
+value: 120
+20250608 13:52:28.058 TRACE:: Config.GetValue(): 
+scheduled-event-leaky-bucket-time-interval-minutes - 
+Using default value: 1440
+20250608 13:52:28.063 TRACE:: Config.GetValue(): 
+scheduled-event-leaky-bucket-refill-amount - Using 
+default value: 18
+20250608 13:52:28.083 TRACE:: Config.GetValue(): 
+storage-limit - Using default value: 10737418240
+20250608 13:52:28.090 TRACE:: Config.GetValue(): 
+storage-permissions - Using default value: 3
+20250608 13:52:28.097 TRACE:: Config.Get(): Configuration
+key not found. Key: optimization-id - Using default 
+value:
+20250608 13:52:28.101 TRACE:: Config.Get(): Configuration
+key not found. Key: backtest-name - Using default value: 
+local
+20250608 13:52:28.202 TRACE:: Config.Get(): Configuration
+key not found. Key: data-channel - Using default value:
+20250608 13:52:28.218 TRACE:: Config.Get(): Configuration
+key not found. Key: python-venv - Using default value:
+20250608 13:52:28.226 TRACE:: Config.Get(): Configuration
+key not found. Key: out-of-sample-max-end-date - Using 
+default value:
+20250608 13:52:28.236 TRACE:: Config.GetValue(): 
+out-of-sample-days - Using default value: 0
+20250608 13:52:28.270 TRACE:: Config.Get(): Configuration
+key not found. Key: data-permission-manager - Using 
+default value: DataPermissionManager
+20250608 13:52:28.277 TRACE:: Config.Get(): Configuration
+key not found. Key: data-monitor - Using default value: 
+QuantConnect.Data.DataMonitor
+20250608 13:52:28.460 TRACE:: Config.GetValue(): 
+algorithm-creation-timeout - Using default value: 90
+20250608 13:52:28.611 TRACE:: Config.GetValue(): 
+zip-data-cache-provider - Using default value: 10
+20250608 13:52:28.637 TRACE:: Config.Get(): Configuration
+key not found. Key: fundamental-data-provider - Using 
+default value: CoarseFundamentalDataProvider
+20250608 13:52:28.678 TRACE:: 
+AlgorithmManager.CreateTokenBucket(): Initializing 
+LeakyBucket: Capacity: 120 RefillAmount: 18 TimeInterval:
+1440
+20250608 13:52:28.694 TRACE:: Config.GetValue(): 
+algorithm-manager-time-loop-maximum - Using default 
+value: 20
+20250608 13:52:28.838 TRACE:: Engine.Run(): Resource 
+limits '0' CPUs. 2147483647 MB RAM.
+20250608 13:52:28.851 TRACE:: Config.GetValue(): 
+downloader-data-update-period - Using default value: 7
+20250608 13:52:28.867 TRACE:: 
+TextSubscriptionDataSourceReader.SetCacheSize(): Setting 
+cache size to 71582788 items
+20250608 13:52:41.067 TRACE:: 
+PythonInitializer.Initialize(): start...
+PythonEngine.Initialize(): clr 
+GetManifestResourceStream...
+20250608 13:52:48.626 TRACE:: 
+PythonInitializer.Initialize(): ended
+20250608 13:52:48.646 TRACE:: AlgorithmPythonWrapper(): 
+Python version 3.11.8 | packaged by conda-forge | (main, 
+Feb 16 2024, 21:14:50) [GCC 12.3.0]: Importing python 
+module main
+20250608 13:53:19.792 TRACE:: AlgorithmPythonWrapper(): 
+main successfully imported.
+20250608 13:53:19.824 TRACE:: AlgorithmPythonWrapper(): 
+Creating IAlgorithm instance.
+20250608 13:53:19.969 TRACE:: Config.Get(): Configuration
+key not found. Key: databases-refresh-period - Using 
+default value: 1.00:00:00
+20250608 13:53:21.642 TRACE:: Config.GetValue(): 
+mute-python-library-logging - Using default value: True
+20250608 13:53:21.695 TRACE:: 
+LocalObjectStore.Initialize(): Storage Root: /Storage. 
+StorageFileCount 9999999. StorageLimit 10240MB
+20250608 13:53:21.792 TRACE:: Config.GetValue(): 
+zip-data-cache-provider - Using default value: 10
+20250608 13:53:21.854 TRACE:: 
+HistoryProviderManager.Initialize(): history providers 
+[SubscriptionDataReaderHistoryProvider]
+20250608 13:53:21.901 TRACE:: 
+BaseSetupHandler.Setup(LocalPlatform): UID: 385293, PID: 
+-804359852, Version: 2.5.0.0, Source: WebIDE
+20250608 13:53:21.945 TRACE:: Config.Get(): Configuration
+key not found. Key: security-data-feeds - Using default 
+value:
+20250608 13:53:23.980 TRACE:: 
+BaseSetupHandler.SetupCurrencyConversions():
+Account Type: Margin
+
+Symbol      Quantity    Conversion = Value in USD
+USD: $       10000.00 @       1.00 = $10000
+-------------------------------------------------
+CashBook Total Value:                $10000
+
+20250608 13:53:24.014 TRACE:: Total margin information: 
+TotalMarginUsed: 0.00, MarginRemaining: 10000.00
+20250608 13:53:24.024 TRACE:: SetUp Backtesting: User: 
+385293 ProjectId: -804359852 AlgoId: 1501344439
+20250608 13:53:24.049 TRACE:: Dates: Start: 01/01/2023 
+End: 06/07/2025 Cash: ¤10,000.00 MaximumRuntime: 
+100.00:00:00 MaxOrders: 2147483647
+20250608 13:53:24.080 TRACE:: BacktestingResultHandler():
+Sample Period Set: 320.04
+20250608 13:53:24.094 TRACE:: Config.GetValue(): 
+forward-console-messages - Using default value: True
+20250608 13:53:24.106 TRACE:: JOB HANDLERS:
+         DataFeed:             
+QuantConnect.Lean.Engine.DataFeeds.FileSystemDataFeed
+         Setup:                
+QuantConnect.Lean.Engine.Setup.BacktestingSetupHandler
+         RealTime:             
+QuantConnect.Lean.Engine.RealTime.BacktestingRealTimeHand
+ler
+         Results:              
+QuantConnect.Lean.Engine.Results.BacktestingResultHandler
+         Transactions:         
+QuantConnect.Lean.Engine.TransactionHandlers.BacktestingT
+ransactionHandler
+         Object Store:         
+QuantConnect.Lean.Engine.Storage.LocalObjectStore
+         History Provider:     
+QuantConnect.Lean.Engine.HistoricalData.HistoryProviderMa
+nager
+         Brokerage:            
+QuantConnect.Brokerages.Backtesting.BacktestingBrokerage
+         Data Provider:        
+QuantConnect.Lean.Engine.DataFeeds.DefaultDataProvider
+
+20250608 13:53:24.306 TRACE:: Event Name "Daily 
+Sampling", scheduled to run.
+20250608 13:53:24.325 TRACE:: AlgorithmManager.Run(): 
+Begin DataStream - Start: 1/1/2023 12:00:00 AM Stop: 
+6/7/2025 11:59:59 PM Time: 3/17/2022 12:00:00 AM Warmup: 
+True
+20250608 13:53:24.843 TRACE:: Config.GetValue(): 
+data-feed-workers-count - Using default value: 2
+20250608 13:53:24.861 TRACE:: Config.GetValue(): 
+data-feed-max-work-weight - Using default value: 400
+20250608 13:53:24.872 TRACE:: WeightedWorkScheduler(): 
+will use 2 workers and MaxWorkWeight is 400
+20250608 13:53:25.198 TRACE:: Debug: Launching analysis 
+for 1501344439 with LEAN Engine v2.5.0.0
+20250608 13:53:26.563 TRACE:: 
+UniverseSelection.AddPendingInternalDataFeeds(): Adding 
+internal benchmark data feed 
+SPY,#0,SPY,Hour,TradeBar,Trade,Adjusted,OpenInterest,Inte
+rnal
+20250608 13:53:29.580 TRACE:: 
+Synchronizer.GetEnumerator(): Exited thread.
+20250608 13:53:29.583 TRACE:: AlgorithmManager.Run(): 
+Firing On End Of Algorithm...
+20250608 13:53:29.601 TRACE:: Engine.Run(): Exiting 
+Algorithm Manager
+20250608 13:53:29.617 TRACE:: Debug: Accurate daily 
+end-times now enabled by default. See more at 
+https://qnt.co/3YHaWHL. To disable it and use legacy 
+daily bars set self.settings.daily_precise_end_time = 
+False.
+20250608 13:53:29.625 TRACE:: Debug: Algorithm starting 
+warm up...
+20250608 13:53:29.652 TRACE:: StopSafely(): Waiting for 
+'Isolator Thread' thread to stop...
+20250608 13:53:29.662 TRACE:: FileSystemDataFeed.Exit(): 
+Start. Setting cancellation token...
+20250608 13:53:29.682 TRACE:: FileSystemDataFeed.Exit(): 
+Exit Finished.
+20250608 13:53:29.683 TRACE:: Debug: Algorithm 
+Id:(1501344439) completed in 5.49 seconds at 0k data 
+points per second. Processing total of 1 data points.
+20250608 13:53:29.688 TRACE:: 
+BacktestingResultHandler.Exit(): starting...
+20250608 13:53:29.690 TRACE:: 
+BacktestingResultHandler.Exit(): Saving logs...
+20250608 13:53:29.725 TRACE:: Debug: Your log was 
+successfully created and can be retrieved from: 
+/Results/1501344439-log.txt
+20250608 13:53:29.728 TRACE:: 
+BacktestingResultHandler.Run(): Ending Thread...
+20250608 13:53:29.727 TRACE:: StopSafely(): Waiting for 
+'Result Thread' thread to stop...
+20250608 13:53:30.423 TRACE::
+STATISTICS:: OrderListHash 
+d41d8cd98f00b204e9800998ecf8427e
+20250608 13:53:30.425 TRACE:: 
+BacktestingResultHandler.SendAnalysisResult(): Processed 
+final packet
+20250608 13:53:30.436 TRACE:: Engine.Run(): Disconnecting
+from brokerage...
+20250608 13:53:30.442 TRACE:: Engine.Run(): Disposing of 
+setup handler...
+20250608 13:53:30.447 TRACE:: Engine.Main(): Analysis 
+Completed and Results Posted.
+20250608 13:53:30.455 TRACE:: StopSafely(): Waiting for 
+'' thread to stop...
+20250608 13:53:30.484 TRACE:: 
+DataMonitor.GenerateReport():
+DATA USAGE:: Total data requests 2
+DATA USAGE:: Succeeded data requests 2
+DATA USAGE:: Failed data requests 0
+DATA USAGE:: Failed data requests percentage 0%
+DATA USAGE:: Total universe data requests 0
+DATA USAGE:: Succeeded universe data requests 0
+DATA USAGE:: Failed universe data requests 0
+DATA USAGE:: Failed universe data requests percentage 0%
+Engine.Main(): Analysis Complete.
+20250608 13:53:30.658 TRACE:: Engine.Main(): Packet 
+removed from queue: 1501344439
+20250608 13:53:30.660 TRACE:: 
+LeanEngineSystemHandlers.Dispose(): start...
+20250608 13:53:30.676 TRACE:: 
+LeanEngineSystemHandlers.Dispose(): Disposed of system 
+handlers.
+20250608 13:53:30.680 TRACE:: 
+LeanEngineAlgorithmHandlers.Dispose(): start...
+20250608 13:53:30.687 TRACE:: 
+LeanEngineAlgorithmHandlers.Dispose(): Disposed of 
+algorithm handlers.
+20250608 13:53:30.710 TRACE:: StopSafely(): Waiting for 
+'CpuPerformance' thread to stop...
+20250608 13:53:30.714 TRACE:: 
+PythonInitializer.Shutdown(): start
+20250608 13:53:46.281 TRACE:: 
+PythonInitializer.Shutdown(): ended
+20250608 13:53:46.287 TRACE:: Program.Main(): Exiting 
+Lean...
+Successfully ran 'BaselineSMA' in the 'backtesting' 
+environment and stored the output in 'pipeline_last.json'
+++ find pipeline_last.json -maxdepth 1 -name '*-summary.json'
+++ head -n 1
++ SUMMARY=pipeline_last.json/1501344439-summary.json
++ [[ -f pipeline_last.json/1501344439-summary.json ]]
+++ jq -r '.Statistics["Sharpe Ratio"] // .statistics["Sharpe Ratio"] // ."Sharpe Ratio"' pipeline_last.json/1501344439-summary.json
++ NEW=null
+++ cat previous_sharpe.txt
++ OLD=0.27
+++ date
++ echo '⏰ Sun Jun  8 09:53:48 EDT 2025  —  Sharpe null (prev 0.27)'
+⏰ Sun Jun  8 09:53:48 EDT 2025  —  Sharpe null (prev 0.27)
+++ echo 'null > 0.27'
+++ bc -l
++ ((  0  ))

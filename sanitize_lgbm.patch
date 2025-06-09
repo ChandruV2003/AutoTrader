@@ -1,0 +1,14 @@
+*** Begin Patch
+*** Update File: Research/scripts/train_lightgbm.py
+@@ def train_and_save(df, features):
+-    # sanitize column names for LightGBM
+-    df.columns = [re.sub(r"[^0-9A-Za-z_]", "_", col) for col in df.columns]
++    # sanitize column names for LightGBM (force each to string)
++    df.columns = [re.sub(r"[^0-9A-Za-z_]", "_", str(col)) for col in df.columns]
+
+@@ def train_and_save(df, features):
+-    # sanitize feature names for LightGBM
+-    features = [re.sub(r"[^0-9A-Za-z_]", "_", f) for f in features]
++    # sanitize feature names for LightGBM (force each to string)
++    features = [re.sub(r"[^0-9A-Za-z_]", "_", str(f)) for f in features]
+*** End Patch
