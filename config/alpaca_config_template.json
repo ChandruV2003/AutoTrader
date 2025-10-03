@@ -1,0 +1,33 @@
+{
+  "alpaca_paper_trading": {
+    "api_key": "YOUR_NEW_API_KEY_HERE",
+    "secret_key": "YOUR_NEW_SECRET_KEY_HERE",
+    "base_url": "https://paper-api.alpaca.markets",
+    "paper_trading": true,
+    "instructions": [
+      "1. Get new API keys from https://app.alpaca.markets/",
+      "2. Replace YOUR_NEW_API_KEY_HERE with your actual API key",
+      "3. Replace YOUR_NEW_SECRET_KEY_HERE with your actual secret key",
+      "4. Save this file as config/alpaca_config.json",
+      "5. Test with: python test_alpaca_connection.py"
+    ]
+  },
+  "alternative_brokers": {
+    "robinhood": {
+      "note": "No official API - use manual trading or browser automation",
+      "status": "manual_only"
+    },
+    "webull": {
+      "note": "Has API but requires approval",
+      "status": "requires_approval"
+    },
+    "interactive_brokers": {
+      "note": "Professional API - requires account approval",
+      "status": "professional"
+    },
+    "tradier": {
+      "note": "Good API for retail traders",
+      "status": "available"
+    }
+  }
+}

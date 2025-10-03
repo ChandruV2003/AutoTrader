@@ -1,0 +1,12 @@
+# AutoTrader Cron Jobs
+# Trading signals every 5 minutes during market hours (9:30 AM - 4:00 PM, Monday-Friday)
+*/5 9-16 * * 1-5 /Users/admin/Developer/AutoTrader/cron_jobs/autotrader_cron.sh
+
+# Daily model training at 6 PM
+0 18 * * * /Users/admin/Developer/AutoTrader/cron_jobs/daily_training.sh
+
+# Weekly performance report every Sunday at 9 AM
+0 9 * * 0 /Users/admin/Developer/AutoTrader/cron_jobs/weekly_report.sh
+
+# System health check every hour
+0 * * * * echo "$(date): System running" >> /Users/admin/Developer/AutoTrader/logs/system_health.log

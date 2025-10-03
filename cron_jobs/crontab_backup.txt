@@ -1,0 +1,5 @@
+5 */4 * * *  cd $HOME/Developer/AutoTrader && source .venv/bin/activate && ./scripts/run_pipeline.sh >> pipeline.log 2>&1
+15 2 * * Sun  cd $HOME/Developer/AutoTrader && source .venv/bin/activate && python Research/scripts/hyperopt_lightgbm.py --trials 100 >> hyperopt.log 2>&1
+0 6 * * * cd /Users/admin/Developer/AutoTrader && /Users/admin/Developer/AutoTrader/.venv/bin/python research/scripts/train_lightgbm.py >> logs/training.log 2>&1
+0 7 * * * cd /Users/admin/Developer/AutoTrader && /Users/admin/Developer/AutoTrader/.venv/bin/python research/scripts/train_crypto_lightgbm.py >> logs/crypto_training.log 2>&1
+0 8 * * * cd /Users/admin/Developer/AutoTrader && ./scripts/run_pipeline.sh >> logs/pipeline.log 2>&1
