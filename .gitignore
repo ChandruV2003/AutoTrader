@@ -85,3 +85,4 @@ config/brokerage_config.json
 *.zip
 *.tar.gz
 *.rar
+optuna_trials.db
