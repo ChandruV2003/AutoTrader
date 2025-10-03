@@ -22,40 +22,28 @@ def fetch_data(ticker: str = "SPY",
 
     # ── flatten possible MultiIndex → "close", "high", … ──
     df.columns = [c[0] if isinstance(c, tuple) else c for c in df.columns]
-    
     return df
-
-
-def _rsi(s, n=14):
-    """vectorised RSI (no TA-Lib)"""
-    delta=s.diff(); gain=delta.clip(lower=0).rolling(n).mean();
-    loss=(-delta.clip(upper=0)).rolling(n).mean(); rs=gain/loss;
-    return 100-100/(1+rs)
 
 def build_features(df: pd.DataFrame) -> pd.DataFrame:
     price_col = "close" if "close" in df.columns else "adj close"
     if price_col not in df.columns:
         raise KeyError("Could not find a price column")
     df = df.copy()                                  # avoid SettingWithCopy
-    
     # ── basic returns & volatility ───────────────────────────────────────
     df["ret_1d"]   = df[price_col].pct_change()
     df["ret_5d"]   = df[price_col].pct_change(5)
     df["vol_30d"]  = df["ret_1d"].rolling(30).std()
-    
     # ── engineered features ─────────────────────────────────────────────
     df["mom_20d"]  = df[price_col].pct_change(20)
     df["mom_120d"] = df[price_col].pct_change(120)
     df["atr_14d"]  = (df["high"] - df["low"]).rolling(14).mean()
     df["skew_30d"] = df["ret_1d"].rolling(30).skew()
-    
     # ── binary label ────────────────────────────────────────────────────
     df["target"]   = (df[price_col].shift(-5) > df[price_col]).astype(int)
-    
-    # Drop rows with missing values
     df.dropna(subset=["ret_5d", "vol_30d", "mom_20d", "mom_120d", "atr_14d", "skew_30d", "target"], inplace=True)
-    
     return df
+
+
 def train(df: pd.DataFrame) -> lgb.Booster:
     X = df[["ret_5d","vol_30d","mom_20d","mom_120d","atr_14d","skew_30d"]].values
     y = df["target"].values
@@ -72,7 +60,7 @@ def train(df: pd.DataFrame) -> lgb.Booster:
 
 
 def main() -> None:
-    df = build_features(fetch_data())
+    df    = build_features(fetch_data())
     model = train(df)
 
     out = Path(__file__).resolve().parent.parent / "models"
@@ -80,22 +68,6 @@ def main() -> None:
     fname = out / f"lgb_spy_{dt.date.today():%Y-%m-%d}.pkl"
     joblib.dump(model, fname)
     print(f"✔ saved → {fname}")
-    
-    # Calculate and save AUC score for pipeline comparison
-    X = df[["ret_5d","vol_30d","mom_20d","mom_120d","atr_14d","skew_30d"]].values
-    y = df["target"].values
-    predictions = model.predict(X)
-    
-    from sklearn.metrics import roc_auc_score
-    auc_score = roc_auc_score(y, predictions)
-    
-    # Save AUC score for pipeline script
-    auc_file = Path(__file__).resolve().parent.parent.parent / "latest_auc.txt"
-    with open(auc_file, 'w') as f:
-        f.write(str(auc_score))
-    
-    print(f"✔ AUC Score: {auc_score:.6f}")
-    print(f"✔ AUC saved → {auc_file}")
 
 
 if __name__ == "__main__":

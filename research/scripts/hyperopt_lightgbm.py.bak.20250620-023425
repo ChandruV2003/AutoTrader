@@ -53,3 +53,4 @@ def _objective(trial: optuna.trial.Trial) -> float:
 
 def main(trials, n_jobs):
     study = optuna.create_study(load_if_exists=True, study_name=STUDY_NAME, storage=STORAGE, direction="maximize")
+        study.optimize(_objective, n_trials=trials, n_jobs=n_jobs)

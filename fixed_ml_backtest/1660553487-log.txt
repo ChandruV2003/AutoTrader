@@ -1,0 +1,12 @@
+2011-03-18 00:00:00 Launching analysis for 1660553487 with LEAN Engine v2.5.0.0
+2011-03-18 00:00:00 Models directory not found, using technical indicators only
+2011-03-18 00:00:00 Accurate daily end-times now enabled by default. See more at https://qnt.co/3YHaWHL. To disable it and use legacy daily bars set self.settings.daily_precise_end_time = False.
+2011-03-18 00:00:00 Algorithm starting warm up...
+2012-01-04 16:00:00 Algorithm finished warming up.
+2012-12-21 00:00:00 Runtime Error: 'NoneType' object has no attribute 'Close'
+  at OnData
+    features = self.calculate_features(current_bar.Close)
+                                       ^^^^^^^^^^^^^^^^^
+ in main.py: line 143
+
+2012-12-21 00:00:00 Algorithm Id:(1660553487) completed in 9.97 seconds at 0k data points per second. Processing total of 452 data points.

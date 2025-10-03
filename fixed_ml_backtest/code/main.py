@@ -134,9 +134,6 @@ class MLEnhancedTrading(QCAlgorithm):
             
         # Add current bar to price history
         current_bar = data[self.symbol]
-        if current_bar is None or current_bar.Close is None:
-            return
-            
         self.price_history.Add(current_bar)
         
         if not self.price_history.IsReady:
