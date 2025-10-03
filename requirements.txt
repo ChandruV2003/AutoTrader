@@ -1,0 +1,24 @@
+# AutoTrader Requirements
+
+## Python Dependencies
+pandas>=1.5.0
+numpy>=1.21.0
+yfinance>=0.2.0
+scikit-learn>=1.1.0
+lightgbm>=3.3.0
+joblib>=1.2.0
+schedule>=1.2.0
+sqlite3
+logging
+
+## System Requirements
+- Python 3.11+
+- macOS Monterey or later
+- 8GB+ RAM (64GB recommended)
+- 256GB+ SSD storage
+- Internet connection
+
+## Optional Dependencies
+- Docker/Colima (for LEAN)
+- Git (for version control)
+- Homebrew (for package management)
