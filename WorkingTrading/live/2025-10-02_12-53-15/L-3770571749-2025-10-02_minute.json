@@ -1,0 +1,62 @@
+{
+  "holdings": {},
+  "cash": {
+    "USD": {
+      "securitySymbols": [],
+      "symbol": "USD",
+      "amount": 10000.0,
+      "conversionRate": 1.0,
+      "currencySymbol": "$",
+      "valueInAccountCurrency": 10000.0
+    }
+  },
+  "accountCurrency": "USD",
+  "accountCurrencySymbol": "$",
+  "charts": {
+    "Strategy Equity": {
+      "name": "Strategy Equity",
+      "chartType": 0,
+      "series": {
+        "Equity": {"name":"Equity","unit":"$","index":0,"seriesType":2,"values":[]},
+        "Return": {"name":"Return","unit":"%","index":1,"seriesType":3,"values":[],"color":"","scatterMarkerSymbol":"none"}
+      }
+    }
+  },
+  "orders": {},
+  "profitLoss": {},
+  "statistics": {},
+  "runtimeStatistics": {
+    "Equity": "$10,000.00",
+    "Fees": "-$0.00",
+    "Holdings": "$0.00",
+    "Net Profit": "$0.00",
+    "Probabilistic Sharpe Ratio": "0%",
+    "Return": "0.00 %",
+    "Unrealized": "$0.00",
+    "Volume": "$0.00"
+  },
+  "state": {
+    "StartTime": "2025-10-02 16:53:57",
+    "EndTime": "2025-10-02 16:54:45",
+    "RuntimeError": "Runtime Error: QuantConnect.Queues.LiveDataQueue has not implemented live data. in DataQueueHandlerManager.cs:line 139",
+    "StackTrace": "QuantConnect.Queues.LiveDataQueue has not implemented live data. in DataQueueHandlerManager.cs:line 139",
+    "LogCount": "6",
+    "OrderCount": "0",
+    "InsightCount": "0",
+    "Hostname": "Chandrus-M1-MacBook-Pro",
+    "Status": "RuntimeError"
+  },
+  "algorithmConfiguration": {
+    "name": "385293--905031545-L-3770571749",
+    "tags": [],
+    "accountCurrency": "USD",
+    "brokerage": 1,
+    "accountType": 0,
+    "parameters": {},
+    "outOfSampleMaxEndDate": null,
+    "outOfSampleDays": 0,
+    "startDate": "2025-10-02 00:00:00",
+    "endDate": "2050-12-31 00:00:00",
+    "tradingDaysPerYear": 252
+  }
+}

@@ -1,0 +1,20 @@
+[Unit]
+Description=Headless AutoTrader - AI Trading System
+After=network.target
+
+[Service]
+Type=simple
+User=admin
+WorkingDirectory=/Users/admin/Developer/AutoTrader
+ExecStart=/Users/admin/Developer/AutoTrader/.venv/bin/python /Users/admin/Developer/AutoTrader/headless_auto_trader.py
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+# Environment variables
+Environment=PYTHONPATH=/Users/admin/Developer/AutoTrader
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

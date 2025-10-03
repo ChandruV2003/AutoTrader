@@ -1,0 +1,6 @@
+2025-10-02 16:54:43 Launching analysis for L-3770571749 with LEAN Engine v2.5.0.0
+2025-10-02 16:54:45 Runtime Error: QuantConnect.Queues.LiveDataQueue has not implemented live data. in DataQueueHandlerManager.cs:line 139
+2025-10-02 16:54:45 Runtime Error: QuantConnect.Queues.LiveDataQueue has not implemented live data. in DataQueueHandlerManager.cs:line 139: StackTrace: QuantConnect.Queues.LiveDataQueue has not implemented live data. in DataQueueHandlerManager.cs:line 139
+2025-10-02 16:54:45 Paper Brokerage account base currency: USD
+2025-10-02 16:54:45 Accurate daily end-times now enabled by default. See more at https://qnt.co/3YHaWHL. To disable it and use legacy daily bars set self.settings.daily_precise_end_time = False.
+2025-10-02 16:54:45 Algorithm starting warm up...

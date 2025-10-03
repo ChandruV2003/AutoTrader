@@ -1,0 +1,87 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# Logs
+logs/
+*.log
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Model files (too large for git)
+*.pkl
+*.h5
+*.model
+
+# Data files
+data/
+pipeline_last.json/
+test_backtest.json/
+backups/
+
+# Temporary files
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# System files
+*.pid
+*.sock
+
+# Trading data
+trade_instructions/
+reports/
+signals/
+
+# Test results
+*_test/
+*_results/
+current_test/
+working_test/
+simple_ml_test/
+profitable_test/
+fixed_*_results/
+ml_backtest_results/
+paper_test_results/
+
+# Configuration files with sensitive data
+config/brokerage_config.json
+
+# Large binary files
+*.zip
+*.tar.gz
+*.rar

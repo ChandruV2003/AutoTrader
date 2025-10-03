@@ -1,0 +1,141 @@
+2025-10-02T16:53:23.1986020Z TRACE:: Engine.Main(): LEAN ALGORITHMIC TRADING ENGINE v2.5.0.0 Mode: DEBUG (64bit) Host: Chandrus-M1-MacBook-Pro
+2025-10-02T16:53:23.4343162Z TRACE:: Engine.Main(): Started 4:53 PM
+2025-10-02T16:53:23.5170429Z TRACE:: Config.Get(): Configuration key not found. Key: lean-manager-type - Using default value: LocalLeanManager
+2025-10-02T16:53:23.9076386Z TRACE:: JobQueue.NextJob(): Selected /LeanCLI/main.py
+2025-10-02T16:53:24.6113382Z TRACE:: Config.GetValue(): scheduled-event-leaky-bucket-capacity - Using default value: 120
+2025-10-02T16:53:24.6149061Z TRACE:: Config.GetValue(): scheduled-event-leaky-bucket-time-interval-minutes - Using default value: 1440
+2025-10-02T16:53:24.6275011Z TRACE:: Config.GetValue(): scheduled-event-leaky-bucket-refill-amount - Using default value: 18
+2025-10-02T16:53:24.6532240Z TRACE:: Config.GetValue(): storage-limit - Using default value: 10737418240
+2025-10-02T16:53:24.6604570Z TRACE:: Config.GetValue(): storage-permissions - Using default value: 3
+2025-10-02T16:53:24.7377367Z TRACE:: Config.Get(): Configuration key not found. Key: data-channel - Using default value: 
+2025-10-02T16:53:24.7535777Z TRACE:: Config.Get(): Configuration key not found. Key: python-venv - Using default value: 
+2025-10-02T16:53:56.8826732Z TRACE:: JobQueue.NextJob(): Not able to fetch brokerage factory with name: QuantConnect.Lean.Engine.DataFeeds.Queues.LiveDataQueue
+2025-10-02T16:53:57.0362137Z TRACE:: Config.Get(): Configuration key not found. Key: data-permission-manager - Using default value: DataPermissionManager
+2025-10-02T16:53:57.0374037Z TRACE:: Config.Get(): Configuration key not found. Key: data-monitor - Using default value: QuantConnect.Data.DataMonitor
+2025-10-02T16:53:57.1088645Z TRACE:: Config.GetValue(): streamed-chart-limit - Using default value: 12
+2025-10-02T16:53:57.1102005Z TRACE:: Config.GetValue(): streamed-chart-group-size - Using default value: 3
+2025-10-02T16:53:57.2395111Z TRACE:: Config.GetValue(): downloader-data-update-period - Using default value: 7
+2025-10-02T16:54:05.7384672Z TRACE:: Config.GetValue(): zip-data-cache-provider - Using default value: 10
+2025-10-02T16:54:05.7635361Z TRACE:: Config.Get(): Configuration key not found. Key: fundamental-data-provider - Using default value: CoarseFundamentalDataProvider
+2025-10-02T16:54:05.8068200Z TRACE:: AlgorithmManager.CreateTokenBucket(): Initializing LeakyBucket: Capacity: 120 RefillAmount: 18 TimeInterval: 1440
+2025-10-02T16:54:05.8187290Z TRACE:: Config.GetValue(): algorithm-manager-time-loop-maximum - Using default value: 20
+2025-10-02T16:54:05.9180936Z TRACE:: Engine.Run(): Resource limits '0' CPUs. 2147483647 MB RAM.
+2025-10-02T16:54:05.9299366Z TRACE:: TextSubscriptionDataSourceReader.SetCacheSize(): Setting cache size to 71582788 items
+2025-10-02T16:54:05.9708635Z TRACE:: Config.GetValue(): algorithm-creation-timeout - Using default value: 90
+2025-10-02T16:54:06.0357143Z TRACE:: PythonInitializer.Initialize(): start...
+2025-10-02T16:54:08.8857700Z TRACE:: PythonInitializer.Initialize(): ended
+2025-10-02T16:54:08.9081959Z TRACE:: AlgorithmPythonWrapper(): Python version 3.11.8 | packaged by conda-forge | (main, Feb 16 2024, 21:14:50) [GCC 12.3.0]: Importing python module main
+2025-10-02T16:54:37.0863685Z TRACE:: AlgorithmPythonWrapper(): main successfully imported.
+2025-10-02T16:54:37.1968181Z TRACE:: AlgorithmPythonWrapper(): Creating IAlgorithm instance.
+2025-10-02T16:54:37.4609593Z TRACE:: Config.Get(): Configuration key not found. Key: databases-refresh-period - Using default value: 1.00:00:00
+2025-10-02T16:54:39.3992622Z TRACE:: Config.GetValue(): mute-python-library-logging - Using default value: True
+2025-10-02T16:54:39.4725019Z TRACE:: LocalObjectStore.Initialize(): Storage Root: /Storage. StorageFileCount 9999999. StorageLimit 10240MB
+2025-10-02T16:54:39.4821079Z TRACE:: LiveTradingDataFeed.GetDataChannelProvider(): will use DataChannelProvider
+2025-10-02T16:54:39.5042548Z TRACE:: BrokerageSetupHandler.CreateBrokerage(): creating brokerage 'PaperBrokerage'
+2025-10-02T16:54:39.6447434Z TRACE:: CompositeDataQueueHandler.SetJob(): will use ["QuantConnect.Lean.Engine.DataFeeds.Queues.LiveDataQueue"]
+2025-10-02T16:54:39.6825223Z TRACE:: BaseDataExchange(CustomDataExchange) Starting...
+2025-10-02T16:54:39.6893563Z TRACE:: Config.GetValue(): zip-data-cache-provider - Using default value: 10
+2025-10-02T16:54:39.7520891Z TRACE:: HistoryProviderManager.Initialize(): history providers [SubscriptionDataReaderHistoryProvider]
+2025-10-02T16:54:39.8190798Z TRACE:: BaseSetupHandler.Setup(LocalPlatform): UID: 385293, PID: -905031545, Version: 2.5.0.0, Source: WebIDE
+2025-10-02T16:54:39.8386508Z TRACE:: LiveTradingResultHandler.SendStatusUpdate(): status: 'LoggingIn'.  Logging into brokerage...
+2025-10-02T16:54:39.8454068Z TRACE:: BrokerageSetupHandler.Setup(): Connecting to brokerage...
+2025-10-02T16:54:39.8570107Z TRACE:: BrokerageSetupHandler.Setup(): Paper Brokerage account base currency: USD
+2025-10-02T16:54:39.8674127Z TRACE:: BrokerageSetupHandler.Setup(): Initializing algorithm...
+2025-10-02T16:54:39.8711647Z TRACE:: LiveTradingResultHandler.SendStatusUpdate(): status: 'Initializing'.  Initializing algorithm...
+2025-10-02T16:54:39.9461644Z TRACE:: Config.Get(): Configuration key not found. Key: security-data-feeds - Using default value: 
+2025-10-02T16:54:42.0064259Z TRACE:: BrokerageSetupHandler.Setup(): Fetching cash balance from brokerage...
+2025-10-02T16:54:42.0744007Z TRACE:: BrokerageSetupHandler.Setup(): Setting USD cash to 10000
+2025-10-02T16:54:42.0989667Z TRACE:: BrokerageSetupHandler.Setup(): Fetching open orders from brokerage...
+2025-10-02T16:54:42.1769654Z TRACE:: BrokerageSetupHandler.Setup(): Fetching holdings from brokerage...
+2025-10-02T16:54:42.2568172Z TRACE:: Brokerage.GetAccountHoldings(): sourcing holdings from provided brokerage data, found 0 entries
+2025-10-02T16:54:42.7327267Z TRACE:: LiveTradingDataFeed.CreateUniverseSubscription(): Creating user defined universe: QC-UNIVERSE-USERDEFINED-USA-EQUITY 2T
+2025-10-02T16:54:42.8645282Z TRACE:: DataManager.AddSubscription(): Added QC-UNIVERSE-USERDEFINED-USA-EQUITY,#0,QC-UNIVERSE-USERDEFINED-USA-EQUITY,Daily,TradeBar,Trade,Adjusted,OpenInterest,Internal. Start: 7/23/2025 4:00:00 AM. End: 12/31/2050 12:00:00 AM
+2025-10-02T16:54:43.0632326Z TRACE:: BaseSetupHandler.SetupCurrencyConversions():
+Account Type: Margin
+
+Symbol      Quantity    Conversion = Value in USD
+USD: $       10000.00 @       1.00 = $10000
+-------------------------------------------------
+CashBook Total Value:                $10000
+
+2025-10-02T16:54:43.0977025Z TRACE:: Total margin information: TotalMarginUsed: 0.00, MarginRemaining: 10000.00
+2025-10-02T16:54:43.1389094Z TRACE:: JOB HANDLERS:
+         DataFeed:             QuantConnect.Lean.Engine.DataFeeds.LiveTradingDataFeed
+         Setup:                QuantConnect.Lean.Engine.Setup.BrokerageSetupHandler
+         RealTime:             QuantConnect.Lean.Engine.RealTime.LiveTradingRealTimeHandler
+         Results:              QuantConnect.Lean.Engine.Results.LiveTradingResultHandler
+         Transactions:         QuantConnect.Lean.Engine.TransactionHandlers.BacktestingTransactionHandler
+         Object Store:         QuantConnect.Lean.Engine.Storage.LocalObjectStore
+         History Provider:     QuantConnect.Lean.Engine.HistoricalData.HistoryProviderManager
+         Brokerage:            QuantConnect.Brokerages.Paper.PaperBrokerage
+         Data Provider:        QuantConnect.Lean.Engine.DataFeeds.DefaultDataProvider
+
+2025-10-02T16:54:43.3667537Z TRACE:: Event Name "Daily Sampling", scheduled to run.
+2025-10-02T16:54:43.3713377Z TRACE:: AlgorithmManager.Run(): Begin DataStream - Start: 10/2/2025 12:00:00 AM Stop: 12/31/2050 12:00:00 AM Time: 7/23/2025 12:00:00 AM Warmup: True
+2025-10-02T16:54:43.3952256Z TRACE:: LiveTradingResultHandler.SendStatusUpdate(): status: 'History'.  0
+2025-10-02T16:54:43.4033526Z TRACE:: ProcessVolatilityHistoryRequirements(): Updating volatility models with historical data...
+2025-10-02T16:54:43.4209875Z TRACE:: ProcessVolatilityHistoryRequirements(): finished.
+2025-10-02T16:54:44.3635715Z ERROR:: LiveTradingDataFeed.CreateSubscription(): CreateSubscription(): Failed configuration: 'SPY,#0,SPY,Daily,TradeBar,Trade,Adjusted,OpenInterest' System.NotImplementedException: QuantConnect.Queues.LiveDataQueue has not implemented live data.
+   at QuantConnect.Lean.Engine.DataFeeds.DataQueueHandlerManager.Subscribe(SubscriptionDataConfig dataConfig, EventHandler newDataAvailableHandler) in Engine/DataFeeds/DataQueueHandlerManager.cs:line 139
+   at QuantConnect.Extensions.SubscribeWithMapping(IDataQueueHandler dataQueueHandler, SubscriptionDataConfig dataConfig, EventHandler newDataAvailableHandler, Func`2 isExpired, SubscriptionDataConfig& subscribedConfig) in Common/Extensions.cs:line 3540
+   at QuantConnect.Lean.Engine.DataFeeds.Enumerators.LiveSubscriptionEnumerator..ctor(SubscriptionDataConfig dataConfig, IDataQueueHandler dataQueueHandler, EventHandler handler, Func`2 isExpired) in Engine/DataFeeds/Enumerators/LiveSubscriptionEnumerator.cs:line 54
+   at QuantConnect.Lean.Engine.DataFeeds.LiveTradingDataFeed.Subscribe(SubscriptionDataConfig dataConfig, EventHandler newDataAvailableHandler, Func`2 isExpired) in Engine/DataFeeds/LiveTradingDataFeed.cs:line 307
+   at QuantConnect.Lean.Engine.DataFeeds.LiveTradingDataFeed.CreateDataSubscription(SubscriptionRequest request) in Engine/DataFeeds/LiveTradingDataFeed.cs:line 243
+   at QuantConnect.Lean.Engine.DataFeeds.LiveTradingDataFeed.CreateSubscription(SubscriptionRequest request) in Engine/DataFeeds/LiveTradingDataFeed.cs:line 124
+2025-10-02T16:54:44.3832385Z ERROR:: Extensions.SetRuntimeError(): Extensions.SetRuntimeError(): RuntimeError at 07/23/2025 04:00:00 UTC. Context: Failed to subscribe to SPY System.NotImplementedException: QuantConnect.Queues.LiveDataQueue has not implemented live data.
+   at QuantConnect.Lean.Engine.DataFeeds.DataQueueHandlerManager.Subscribe(SubscriptionDataConfig dataConfig, EventHandler newDataAvailableHandler) in Engine/DataFeeds/DataQueueHandlerManager.cs:line 139
+   at QuantConnect.Extensions.SubscribeWithMapping(IDataQueueHandler dataQueueHandler, SubscriptionDataConfig dataConfig, EventHandler newDataAvailableHandler, Func`2 isExpired, SubscriptionDataConfig& subscribedConfig) in Common/Extensions.cs:line 3540
+   at QuantConnect.Lean.Engine.DataFeeds.Enumerators.LiveSubscriptionEnumerator..ctor(SubscriptionDataConfig dataConfig, IDataQueueHandler dataQueueHandler, EventHandler handler, Func`2 isExpired) in Engine/DataFeeds/Enumerators/LiveSubscriptionEnumerator.cs:line 54
+   at QuantConnect.Lean.Engine.DataFeeds.LiveTradingDataFeed.Subscribe(SubscriptionDataConfig dataConfig, EventHandler newDataAvailableHandler, Func`2 isExpired) in Engine/DataFeeds/LiveTradingDataFeed.cs:line 307
+   at QuantConnect.Lean.Engine.DataFeeds.LiveTradingDataFeed.CreateDataSubscription(SubscriptionRequest request) in Engine/DataFeeds/LiveTradingDataFeed.cs:line 243
+   at QuantConnect.Lean.Engine.DataFeeds.LiveTradingDataFeed.CreateSubscription(SubscriptionRequest request) in Engine/DataFeeds/LiveTradingDataFeed.cs:line 124
+2025-10-02T16:54:44.6042978Z TRACE:: DataManager.AddSubscription(): Unable to add subscription for: SPY,#0,SPY,Daily,TradeBar,Trade,Adjusted,OpenInterest
+2025-10-02T16:54:44.6382687Z ERROR:: LiveTradingDataFeed.CreateSubscription(): CreateSubscription(): Failed configuration: 'SPY,#0,SPY,Minute,TradeBar,Trade,Adjusted,OpenInterest,Internal' System.NotImplementedException: QuantConnect.Queues.LiveDataQueue has not implemented live data.
+   at QuantConnect.Lean.Engine.DataFeeds.DataQueueHandlerManager.Subscribe(SubscriptionDataConfig dataConfig, EventHandler newDataAvailableHandler) in Engine/DataFeeds/DataQueueHandlerManager.cs:line 139
+   at QuantConnect.Extensions.SubscribeWithMapping(IDataQueueHandler dataQueueHandler, SubscriptionDataConfig dataConfig, EventHandler newDataAvailableHandler, Func`2 isExpired, SubscriptionDataConfig& subscribedConfig) in Common/Extensions.cs:line 3540
+   at QuantConnect.Lean.Engine.DataFeeds.Enumerators.LiveSubscriptionEnumerator..ctor(SubscriptionDataConfig dataConfig, IDataQueueHandler dataQueueHandler, EventHandler handler, Func`2 isExpired) in Engine/DataFeeds/Enumerators/LiveSubscriptionEnumerator.cs:line 54
+   at QuantConnect.Lean.Engine.DataFeeds.LiveTradingDataFeed.Subscribe(SubscriptionDataConfig dataConfig, EventHandler newDataAvailableHandler, Func`2 isExpired) in Engine/DataFeeds/LiveTradingDataFeed.cs:line 307
+   at QuantConnect.Lean.Engine.DataFeeds.LiveTradingDataFeed.CreateDataSubscription(SubscriptionRequest request) in Engine/DataFeeds/LiveTradingDataFeed.cs:line 243
+   at QuantConnect.Lean.Engine.DataFeeds.LiveTradingDataFeed.CreateSubscription(SubscriptionRequest request) in Engine/DataFeeds/LiveTradingDataFeed.cs:line 124
+2025-10-02T16:54:44.6539066Z ERROR:: Extensions.SetRuntimeError(): Extensions.SetRuntimeError(): RuntimeError at 07/23/2025 04:00:00 UTC. Context: Failed to subscribe to SPY System.NotImplementedException: QuantConnect.Queues.LiveDataQueue has not implemented live data.
+   at QuantConnect.Lean.Engine.DataFeeds.DataQueueHandlerManager.Subscribe(SubscriptionDataConfig dataConfig, EventHandler newDataAvailableHandler) in Engine/DataFeeds/DataQueueHandlerManager.cs:line 139
+   at QuantConnect.Extensions.SubscribeWithMapping(IDataQueueHandler dataQueueHandler, SubscriptionDataConfig dataConfig, EventHandler newDataAvailableHandler, Func`2 isExpired, SubscriptionDataConfig& subscribedConfig) in Common/Extensions.cs:line 3540
+   at QuantConnect.Lean.Engine.DataFeeds.Enumerators.LiveSubscriptionEnumerator..ctor(SubscriptionDataConfig dataConfig, IDataQueueHandler dataQueueHandler, EventHandler handler, Func`2 isExpired) in Engine/DataFeeds/Enumerators/LiveSubscriptionEnumerator.cs:line 54
+   at QuantConnect.Lean.Engine.DataFeeds.LiveTradingDataFeed.Subscribe(SubscriptionDataConfig dataConfig, EventHandler newDataAvailableHandler, Func`2 isExpired) in Engine/DataFeeds/LiveTradingDataFeed.cs:line 307
+   at QuantConnect.Lean.Engine.DataFeeds.LiveTradingDataFeed.CreateDataSubscription(SubscriptionRequest request) in Engine/DataFeeds/LiveTradingDataFeed.cs:line 243
+   at QuantConnect.Lean.Engine.DataFeeds.LiveTradingDataFeed.CreateSubscription(SubscriptionRequest request) in Engine/DataFeeds/LiveTradingDataFeed.cs:line 124
+2025-10-02T16:54:44.6708476Z TRACE:: DataManager.AddSubscription(): Unable to add subscription for: SPY,#0,SPY,Minute,TradeBar,Trade,Adjusted,OpenInterest,Internal
+2025-10-02T16:54:45.3263565Z TRACE:: Debug: Launching analysis for L-3770571749 with LEAN Engine v2.5.0.0
+2025-10-02T16:54:45.3693324Z ERROR:: AlgorithmManager.Run(): Stopping, encountered a runtime error at 7/23/2025 4:00:00 AM UTC.
+2025-10-02T16:54:45.3796953Z TRACE:: Engine.Run(): Exiting Algorithm Manager
+2025-10-02T16:54:45.3969993Z TRACE:: LiveTradingDataFeed.Exit(): Start. Setting cancellation token...
+2025-10-02T16:54:45.4151332Z TRACE:: StopSafely(): Waiting for 'CustomDataExchange' thread to stop...
+2025-10-02T16:54:45.4181072Z TRACE:: BaseDataExchange(CustomDataExchange).ConsumeQueue(): Exiting...
+2025-10-02T16:54:45.4241522Z TRACE:: LiveTradingDataFeed.Exit(): Exit Finished.
+2025-10-02T16:54:45.4293972Z TRACE:: FileSystemDataFeed.Exit(): Start. Setting cancellation token...
+2025-10-02T16:54:45.4661231Z TRACE:: FileSystemDataFeed.Exit(): Exit Finished.
+2025-10-02T16:54:45.4670341Z TRACE:: Engine.Run(): Sending runtime error to user...
+2025-10-02T16:54:45.5361608Z TRACE:: DataManager.RemoveSubscription(): Removed QC-UNIVERSE-USERDEFINED-USA-EQUITY,#0,QC-UNIVERSE-USERDEFINED-USA-EQUITY,Daily,TradeBar,Trade,Adjusted,OpenInterest,Internal
+2025-10-02T16:54:45.5431718Z TRACE:: StopSafely(): Waiting for 'Isolator Thread' thread to stop...
+2025-10-02T16:54:45.5623968Z TRACE:: StopSafely(): Waiting for 'RealTimeScheduleEventService' thread to stop...
+2025-10-02T16:54:45.6337245Z TRACE:: Log: Runtime Error: QuantConnect.Queues.LiveDataQueue has not implemented live data. in DataQueueHandlerManager.cs:line 139
+2025-10-02T16:54:45.6440345Z ERROR:: Runtime Error: QuantConnect.Queues.LiveDataQueue has not implemented live data. in DataQueueHandlerManager.cs:line 139
+ QuantConnect.Queues.LiveDataQueue has not implemented live data. in DataQueueHandlerManager.cs:line 139
+2025-10-02T16:54:45.6461275Z TRACE:: Debug: Paper Brokerage account base currency: USD
+2025-10-02T16:54:45.6473455Z TRACE:: Debug: Accurate daily end-times now enabled by default. See more at https://qnt.co/3YHaWHL. To disable it and use legacy daily bars set self.settings.daily_precise_end_time = False.
+2025-10-02T16:54:45.6501775Z TRACE:: Debug: Algorithm starting warm up...
+2025-10-02T16:54:45.6539615Z TRACE:: LiveTradingResultHandler.Run(): Ending Thread...
+2025-10-02T16:54:45.6834834Z TRACE:: StopSafely(): Waiting for 'Result Thread' thread to stop...
+2025-10-02T16:54:45.7020013Z TRACE:: LiveTradingResultHandler.SendFinalResult(): Starting...
+2025-10-02T16:54:45.9931654Z TRACE:: LiveTradingResultHandler.SendFinalResult(): Finished storing results. Start sending...
+2025-10-02T16:54:45.9948784Z TRACE:: LiveTradingResultHandler.SendFinalResult(): Ended
+2025-10-02T16:54:46.0083724Z TRACE:: Engine.Run(): Disconnecting from brokerage...
+2025-10-02T16:54:46.0109484Z TRACE:: Engine.Run(): Disposing of setup handler...
+2025-10-02T16:54:46.0224903Z TRACE:: BrokerageSetupHandler.Setup(): Found data queue handler to dispose: QuantConnect.Lean.Engine.DataFeeds.Queues.LiveDataQueue
+2025-10-02T16:54:46.0273433Z TRACE:: Engine.Main(): Analysis Completed and Results Posted.
+2025-10-02T16:54:46.1012101Z TRACE:: Engine.Main(): Packet removed from queue: L-3770571749
+2025-10-02T16:54:46.1099230Z TRACE:: LeanEngineSystemHandlers.Dispose(): start...
+2025-10-02T16:54:46.1270810Z TRACE:: LeanEngineSystemHandlers.Dispose(): Disposed of system handlers.
+2025-10-02T16:54:46.1333740Z TRACE:: LeanEngineAlgorithmHandlers.Dispose(): start...
+2025-10-02T16:54:46.1357940Z TRACE:: BrokerageSetupHandler.Setup(): Found data queue handler to dispose: QuantConnect.Lean.Engine.DataFeeds.Queues.LiveDataQueue
+2025-10-02T16:54:46.1473069Z TRACE:: LeanEngineAlgorithmHandlers.Dispose(): Disposed of algorithm handlers.
